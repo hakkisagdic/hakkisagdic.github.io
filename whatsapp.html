@@ -2,14 +2,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
+<title>Whatsapp Fast Messaging</title>
 <script>
 function myFunction() {
-var uri = "https://api.whatsapp.com/send?phone=" + document.getElementById("textfield").value + "&text=" + document.getElementById("textfield2").value + "&source&data";
-//alert(uri);
+var uri = "";
+
+if (document.getElementById('web').checked) {
+	uri = "https://web.whatsapp.com/send?phone=" + document.getElementById("textfield").value + "&text=" + document.getElementById("textfield2").value + "&source&data";
+} else {
+	uri = "https://api.whatsapp.com/send?phone=" + document.getElementById("textfield").value + "&text=" + document.getElementById("textfield2").value + "&source&data";
+}
+
+alert(uri);
 var encoded = encodeURI(uri);
-//alert(encoded);
-window.open(encoded, '_blank');
+alert(encoded);
+//window.open(encoded, '_blank');
 return false;
 }
 </script>
@@ -17,11 +24,18 @@ return false;
 
 <body>
 <form onsubmit="return myFunction()">
-Whatsapp'a mesaj at&#305;lacak numara : 
+Whatsapp Number : 
 <input type="text" id="textfield" />
- G&ouml;nderilecek Mesaj : 
- <input type="text" id="textfield2" />
- <input type="submit" name="Submit" value="Submit" />
+ Message To Send : 
+<input type="text" id="textfield2" />
+</br>
+<input type="radio" id="desktop" name="client" value="desktop" checked>
+<label for="desktop">Desktop App</label>
+</br>
+<input type="radio" id="web" name="client" value="web">
+<label for="web">Web Client</label>
+</br>
+<input type="submit" name="Submit" value="Submit" />
 </form>
 </body>
 </html>
