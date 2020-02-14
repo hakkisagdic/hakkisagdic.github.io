@@ -5,17 +5,19 @@
 <title>Whatsapp Fast Messaging</title>
 <script>
 function myFunction() {
-var uri = "";
+var uri = "https://";
 
 if (document.getElementById('web').checked) {
-	uri = "https://web.whatsapp.com/send?phone=" + document.getElementById("textfield").value + "&text=" + document.getElementById("textfield2").value + "&source&data";
+	uri += "web";
 } else {
-	uri = "https://api.whatsapp.com/send?phone=" + document.getElementById("textfield").value + "&text=" + document.getElementById("textfield2").value + "&source&data";
+	uri += "api"
 }
 
-alert(uri);
+uri += ".whatsapp.com/send?phone=" + document.getElementById("textfield").value + "&text=" + document.getElementById("textfield2").value + "&source&data";
+
+//alert(uri);
 var encoded = encodeURI(uri);
-alert(encoded);
+//alert(encoded);
 window.open(encoded, '_blank');
 return false;
 }
