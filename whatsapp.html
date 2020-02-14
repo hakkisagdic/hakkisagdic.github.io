@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script>
+function myFunction() {
+var uri = "https://web.whatsapp.com/send?phone=" + document.getElementById("textfield").value + "&text=" + document.getElementById("textfield2").value + "&source&data";
+//alert(uri);
+var encoded = encodeURI(uri);
+//alert(encoded);
+window.open(encoded, '_blank');
+return false;
+}
+</script>
+</head>
+
+<body>
+<form onsubmit="return myFunction()">
+Whatsapp'a mesaj at&#305;lacak numara : 
+<input type="text" id="textfield" />
+ G&ouml;nderilecek Mesaj : 
+ <input type="text" id="textfield2" />
+ <input type="submit" name="Submit" value="Submit" />
+</form>
+</body>
+</html>
